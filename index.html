@@ -919,7 +919,7 @@
     </section>
 
     <!-- Next Event / Countdown Section -->
-    <section id="next-event">
+    <section id="next-event" style="display:none;"> <!-- Nächstes Event deaktiviert. Für spätere Reaktivierung entfernen. -->
         <div class="next-event fade-in">
             <div class="next-event-content">
                 <h3>Nächstes Event</h3>
@@ -1091,8 +1091,12 @@
         }
 
         // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        const countdownEnabled = false;
+
+        if (countdownEnabled) {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
 
         // ============================================
         // SCROLL ANIMATIONS
